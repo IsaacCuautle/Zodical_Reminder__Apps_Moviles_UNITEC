@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "942920012283",
+    "project_id": "zodiacal-reminder",
+    "storage_bucket": "zodiacal-reminder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942920012283:android:987531c112ddfd46347b5e",
+        "android_client_info": {
+          "package_name": "com.example.zodicalreminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942920012283-qcrvcaje4pk3u6bldakidimt5hfj3a9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCOOorBb3-6Bb8OZM5FhPfzROBWftqXuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942920012283-qcrvcaje4pk3u6bldakidimt5hfj3a9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
