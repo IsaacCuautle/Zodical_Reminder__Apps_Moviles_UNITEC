@@ -35,8 +35,6 @@ public class Registro extends MainActivity {
         btnReg.setOnClickListener(v -> {
             try {
                 createAcount(txtEmail.getText().toString(),txtPass1.getText().toString(),txtPass2.getText().toString());
-                abrirActivity(AveriguarSigno.class,null);
-                finish();
             }catch (Exception e){
                 Toast.makeText(getApplicationContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
             }
@@ -57,6 +55,8 @@ public class Registro extends MainActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(getApplicationContext(), "Te has registrado correctamente", Toast.LENGTH_SHORT).show();
+                            abrirActivity(AveriguarSigno.class,null);
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getApplicationContext(), "Error al registrarte, vuelve a intentarlo mas tarde!", Toast.LENGTH_SHORT).show();

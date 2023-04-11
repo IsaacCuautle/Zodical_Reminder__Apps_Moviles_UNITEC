@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
             // Intenta iniciar la session del usuario
             try {
                 signInEmailAndPass(txtEmail.getText().toString(), txtPass.getText().toString());
-                abrirActivity(Menu.class, null);
-                finish();
             }
             catch (Exception e) {
                 if(txtEmail.getText().toString().equals("") || txtPass.getText().toString().equals("")){
@@ -119,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         Toast.makeText(getApplicationContext(), "Bienvenido " + email, Toast.LENGTH_SHORT).show();
+                        abrirActivity(Menu.class, null);
+                        finish();
                     } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(getApplicationContext(), "Error al Inicar Sesion, vuelve a intentarlo mas tarde",
