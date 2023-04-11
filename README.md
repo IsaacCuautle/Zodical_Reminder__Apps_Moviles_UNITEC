@@ -1,5 +1,5 @@
 # Zodiacal Reminder
-## Acerca de 
+## Acerca de... 
 Zodiacal Reminder es una aplicacion que fue presentada para la materia Aplicaciones Moviles como proyecto final, esta aplicacion le permite a uno o varios usuarios, registrarse, iniciar sesion y averiguar su signo zodiacal.
 ## Herramientas utilizadas
  - ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white) Electric Eel | 2022.1.1 
