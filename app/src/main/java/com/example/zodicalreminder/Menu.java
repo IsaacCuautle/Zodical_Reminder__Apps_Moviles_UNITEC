@@ -4,12 +4,16 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Menu extends MainActivity {
     private ImageView imgSignoActual;
     public TextView txtSignoActual;
     public Bundle bundle;
-
+    private FirebaseAuth mAuth;
+    public Button btnAveriguarSigno, btnLogOut;
     public static Integer signo = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +21,11 @@ public class Menu extends MainActivity {
         setContentView(R.layout.activity_menu);
 
 
+
         imgSignoActual = findViewById(R.id.imageViewSignoActual);
-        Button btnAveriguarSigno = findViewById(R.id.buttonAveriguarSigno);
+        btnAveriguarSigno = findViewById(R.id.buttonAveriguarSigno);
         txtSignoActual = findViewById(R.id.textViewSignoActual);
+        btnLogOut = findViewById(R.id.buttonHoroscopoLogout);
 
         // Comprueba el signo zodiacal del usuario
         try {
@@ -30,10 +36,19 @@ public class Menu extends MainActivity {
 
         }
 
+        btnLogOut.setOnClickListener(v -> {
+            try {
+
+                logout();
+            }catch (Exception e){
+
+            }
+
+
+        });
 
         btnAveriguarSigno.setOnClickListener(v -> {
             abrirActivity(AveriguarSigno.class,null);
-            finish();
         });
 
     }
@@ -81,6 +96,13 @@ public class Menu extends MainActivity {
                     imgSignoActual.setImageResource(R.drawable.sagitario);
                     break;
             }
+    }
+
+    public void logout(){
+        Toast.makeText(getApplicationContext(), "Cerraste sesion", Toast.LENGTH_SHORT).show();
+        abrirActivity(MainActivity.class,null);
+        finish();
+        mAuth.signOut();
     }
 
 

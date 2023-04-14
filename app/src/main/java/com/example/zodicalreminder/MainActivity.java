@@ -22,9 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int RC_SIGN_IN = 9001;
-    private GoogleSignInClient mGoogleSignInClient;
-    private FirebaseAuth mAuth;
+    public static final int RC_SIGN_IN = 9001;
+    public GoogleSignInClient mGoogleSignInClient;
+    public FirebaseAuth mAuth;
     Button btnLogin;
     SignInButton btnLoginGoogle;
     TextView txtRegistro;
@@ -56,7 +56,11 @@ public class MainActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
 
-        btnLoginGoogle.setOnClickListener(v -> signIn());
+
+        btnLoginGoogle.setOnClickListener(v -> {
+            signIn();
+
+        });
 
         txtRegistro.setOnClickListener(v -> {
             abrirActivity(Registro.class, this.txtRegistro);
@@ -86,8 +90,10 @@ public class MainActivity extends AppCompatActivity {
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                Toast.makeText(getApplicationContext(), "firebaseAuthWithGoogle: ",Toast.LENGTH_SHORT).show();
+
                 firebaseAuthWithGoogle(account.getIdToken());
+                abrirActivity(Menu.class,null);
+                finish();
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(getApplicationContext(),"Google sign in failed ",Toast.LENGTH_SHORT).show();
@@ -136,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         animator.setDuration(500);
         animator.start();
         startActivity(i);
+
     }
 
     // Crea un fragment para el inicio de sesion con Google
@@ -150,5 +157,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
     }
+
 
 }

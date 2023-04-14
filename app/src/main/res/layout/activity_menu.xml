@@ -37,10 +37,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <TextView
         android:id="@+id/textViewSignoActual"
@@ -83,10 +83,12 @@
         app:layout_constraintVertical_bias="0.74" />
 
     <Button
-        android:id="@+id/buttonHoroscopo"
+        android:id="@+id/buttonHoroscopoLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recibe un Horoscopo"
+        android:backgroundTint="#FA0505"
+        android:text="¡CERRAR SESION!"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
